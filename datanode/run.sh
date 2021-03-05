@@ -1,5 +1,8 @@
 #!/bin/bash
 
+apt update
+apt install python3 -y
+
 datadir=`echo $HDFS_CONF_dfs_datanode_data_dir | perl -pe 's#file://##'`
 if [ ! -d $datadir ]; then
   echo "Datanode data directory not found: $datadir"
